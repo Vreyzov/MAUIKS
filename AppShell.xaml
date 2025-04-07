@@ -1,0 +1,28 @@
+<Shell
+    x:Class="HabitTrackerApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:HabitTrackerApp.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Главная"
+        ContentTemplate="{DataTemplate views:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Добавить"
+        ContentTemplate="{DataTemplate views:AddHabitPage}"
+        Route="AddHabitPage" />
+
+    <ShellContent
+        Title="Статистика"
+        ContentTemplate="{DataTemplate views:StatisticsPage}"
+        Route="StatisticsPage" />
+
+    <!-- Исправляем имя на правильное -->
+    <ShellContent
+        Title="Детали Привычки"
+        ContentTemplate="{DataTemplate views:HabitDetailPage}"
+        Route="HabitDetailPage" />
+</Shell>

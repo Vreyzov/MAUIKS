@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitTrackerApp.Views.MainPage"
+>
+
+    <StackLayout Padding="20">
+        <Label Text="Список привычек" FontSize="24" FontAttributes="Bold" />
+
+        <CollectionView ItemsSource="{Binding Habits}" SelectionMode="Single"
+                        SelectionChanged="OnHabitSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" BorderColor="gray" CornerRadius="12">
+                        <StackLayout>
+                            <Label Text="{Binding Title}" FontSize="18" />
+                            <Label Text="{Binding Frequency}" FontSize="14" TextColor="Gray" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Добавить привычку" Clicked="OnAddHabitClicked" />
+        <Button Text="Статистика" Clicked="OnStatisticsClicked" />
+
+
+    </StackLayout>
+
+</ContentPage>
